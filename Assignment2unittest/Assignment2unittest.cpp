@@ -3,8 +3,6 @@
 
 extern "C" int getPerimeter(int *length, int *width); 
 extern "C" int getArea(int *length, int *width);
-extern "C" void setWidth(int input, int *width);
-extern "C" void setLength(int input, int *length);
 
 using namespace Microsoft::VisualStudio::CppUnitTestFramework;
 
@@ -28,7 +26,20 @@ namespace Assignment2unittest
 				Assert::AreEqual(expectedPerimeter, result);
 		}
 
-	
+		TEST_METHOD(GetArea)
+		{
+			// Arrange
+			int length = 5;
+			int width = 4;
+			int expectedArea = 20; // The expected area for a rectangle with length 5 and width 3
+
+			// Act: Call the getArea function
+			int result = getArea(&length, &width);
+
+			// Assert: Check if the result matches the expected value
+			Assert::AreEqual(expectedArea, result);
+		}
+
 
 
 		
