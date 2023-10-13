@@ -3,6 +3,7 @@
 
 extern "C" int getPerimeter(int *length, int *width); 
 extern "C" int getArea(int *length, int *width);
+extern "C" void setLength(int input, int *length);
 
 using namespace Microsoft::VisualStudio::CppUnitTestFramework;
 
@@ -40,8 +41,30 @@ namespace Assignment2unittest
 			Assert::AreEqual(expectedArea, result);
 		}
 
+		TEST_METHOD(SetLength_Case1)
+		{
+			int length = 0; // Initializing width
+			int input = 42; // Valid input within the range
+			setLength(input, &length);
+			Assert::AreEqual(42, length);
+		}
 
+		TEST_METHOD(SetLength_Case2)
+		{
+			int length = 0; // Initializing width
+			int input = 1; // Lower bound input
+			setLength(input, &length);
+			Assert::AreEqual(1, length);
+		}
 
-		
+		TEST_METHOD(SetLength_Case3)
+		{
+			int length = 0; // Initializing width
+			int input = 99; // Upper bound input
+			setLength(input, &length);
+			Assert::AreEqual(99, length); // 
+		}
+
+	
 	};
 }
