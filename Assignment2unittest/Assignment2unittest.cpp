@@ -63,7 +63,7 @@ namespace Assignment2unittest
 			int length = 0; // Initializing width
 			int input = 99; // Upper bound input
 			setLength(input, &length);
-			Assert::AreEqual(99, length); //
+			Assert::AreEqual(99, length); 
 		}
 
 			TEST_METHOD(SetWidth_Case1)
@@ -87,7 +87,7 @@ namespace Assignment2unittest
 			int width = 0; // Initializing width
 			int input = 99; // Upper bound input
 			setWidth(input, &width);
-			Assert::AreEqual(99, width); //
+			Assert::AreEqual(99, width); 
 		}
 
 	};
